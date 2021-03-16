@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth !important;
+}
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #610000;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+body {
+  position: fixed;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  color: black;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.scrollbar-thumb {
+  background-color: #c8c8c8 !important;
+  border-radius: 50% !important;
+  height: 10px !important;
+  width: 10px !important;
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  left: -4.5px !important;
+  box-shadow: 0px 0px 15px 5px #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.scrollbar-thumb:hover {
+  background-color: #8b8b8b !important ;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.scroller .scrollbar-track-y {
+  top: 0;
+  right: 8px;
+  width: 2px;
+  height: 100%;
+  background: rgb(39 39 39 / 75%);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
   color: white;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.typed{
+    position: absolute;
+    top: 50%;  
+    left: calc(50% - 4.625em);
+    font-family: 'Grandstander', cursive;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 10em;
+    -webkit-text-stroke: 4px mintcream;
+    color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
+    z-index: 1;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.anim-typewriter{
+  width:0;
 }

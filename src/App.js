@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import SmoothScroll from "./components/SmoothScroll";
+import Section_1 from "./sections/Section_1";
+import Section_2 from "./sections/Section_2";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SmoothScroll>
+        <section>
+          <Section_1 />
+        </section>
+        <section>
+          <Section_2 />
+        </section>
+      </SmoothScroll>
+    </>
   );
 }
 

@@ -3,12 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^3.11.0",
+    "@react-three/postprocessing": "^1.5.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "gsap": "^3.6.0",
+    "nice-color-palettes": "^3.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-postprocessing": "^1.4.0",
     "react-scripts": "4.0.3",
+    "react-three-fiber": "^5.3.19",
+    "smooth-scrollbar": "^8.6.0",
+    "three": "^0.126.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
