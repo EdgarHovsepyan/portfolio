@@ -6,14 +6,15 @@ import "./App.css";
 function App() {
   return (
     <>
-      <SmoothScroll>
+      {/* <SmoothScroll>
         <section>
           <Section_1 />
         </section>
         <section>
           <Section_2 />
         </section>
-      </SmoothScroll>
+      </SmoothScroll> */}
+      <h1>Hellooooo</h1>
     </>
   );
 }
