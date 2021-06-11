@@ -1,20 +1,24 @@
 import SmoothScroll from "./components/SmoothScroll";
-import Section_1 from "./sections/Section_1";
-import Section_2 from "./sections/Section_2";
+import { BrowserRouter, Route } from "react-router-dom";
+import routes from "./routes";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
   return (
     <>
-      {/* <SmoothScroll>
-        <section>
-          <Section_1 />
-        </section>
-        <section>
-          <Section_2 />
-        </section>
-      </SmoothScroll> */}
-      <h1>Hellooooo</h1>
+      <BrowserRouter>
+        <Navbar />
+        {routes.map((item, index) => (
+          <Route
+            key={index}
+            path={item.path}
+            render={(props) => <item.component {...props} />}
+            title={item.title}
+            exact
+          />
+        ))}
+      </BrowserRouter>
     </>
   );
 }

@@ -18,7 +18,7 @@ const LightPoint = () => {
     ref.current.position.copy(new Vector3(pos.x, pos.y, pos.z));
   });
 
-  return <spotLight ref={ref} intensity={5} color="skyblue" />;
+  return <pointLight ref={ref} intensity={5} color="skyblue" />;
 };
 
 export default LightPoint;

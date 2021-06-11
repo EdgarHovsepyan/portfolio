@@ -7,12 +7,12 @@ const TypedAnimation = () => {
   useEffect(() => {
     typeTimeline.fromTo(
       ".anim-typewriter",
-      8,
+      4,
       {
         width: "0",
       },
       {
-        width: "9.25em" /* same as CSS .line-1 width */,
+        width: "15.5em" /* same as CSS .line-1 width */,
         ease: SteppedEase.config(37),
       },
       0
