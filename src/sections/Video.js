@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
+import { EffectComposer, Bloom, Vignette } from 'react-postprocessing'
 import { DoubleSide } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Canvas, useLoader } from "react-three-fiber";
@@ -31,12 +32,11 @@ const Video = () => {
   return (
     <Canvas camera={{ fov: 75, position: [-100, 170, 150] }}>
       <OrbitControls />
-
       <Suspense fallback={null}>
         <group position={[0, 105, 50]}>
           <mesh>
             <planeBufferGeometry args={[92.16, 51.84]} />
-            <meshStandardMaterial emissive={"black"} side={DoubleSide}>
+            <meshStandardMaterial emissive={"white"} side={DoubleSide}>
               <videoTexture attach="map" args={[video]} />
               <videoTexture attach="emissiveMap" args={[video]} />
             </meshStandardMaterial>
@@ -46,9 +46,13 @@ const Video = () => {
         <primitive object={gltfTable.scene} position={[-45, 0, -40]} />
       </Suspense>
       <ambientLight intensity={1} />
-      <pointLight color={"white"} position={[-10, 10, 50]} />
-      <pointLight color={"white"} position={[50, 50, 10]} />
-      <pointLight color={"white"} position={[50, 100, -50]} />
+      <pointLight intensity={0.3} color={"white"} position={[-10, 10, 50]} />
+      <pointLight intensity={0.3} color={"red"} position={[50, 50, 10]} />
+      <pointLight intensity={0.3} color={"white"} position={[50, 100, -50]} />
+      <EffectComposer>
+        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+        <Vignette eskil={false} offset={0.1} darkness={1.5} />
+      </EffectComposer>
     </Canvas>
   );
 };

@@ -15,7 +15,7 @@
         -webkit-transform: translateY(50%);
         transform: translateY(50%);
         width: 52px;
-        height: 253px;
+        height: 190px;
         border: 2px solid hsla(0, 0%, 100%, .35);
         border-radius: 64px;
         -webkit-box-shadow: -1px 0 4px rgb(0 119 184 / 25%);
@@ -27,6 +27,9 @@
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
 
         a {
             display: inline-block;
@@ -40,6 +43,16 @@
             border: 1px solid rgba(255, 255, 255, 0.35);
             margin: 3px;
             color: white
+        }
+
+        .active {
+            span {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #ffccca;
+            }
         }
     }
     .text {

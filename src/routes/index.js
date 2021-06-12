@@ -4,6 +4,7 @@ const Home = lazy(() => import("../sections/Home"));
 const Particles = lazy(() => import("../sections/Particles"));
 const Video = lazy(() => import("../sections/Video"));
 const Second = lazy(() => import("../sections/Second"));
+const Standviewer = lazy(() => import("../sections/Standviewer"));
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: "/second",
     component: Second,
     title: "Second",
+  },
+  {
+    path: "/stand-viewer",
+    component: Standviewer,
+    title: "Standviewer",
   },
 ];
 
