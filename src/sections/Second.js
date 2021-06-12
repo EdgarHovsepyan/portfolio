@@ -27,7 +27,7 @@ const Scene = () => {
     renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvasRef });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x120310);
+    renderer.setClearColor(new THREE.Color(0x120310));
     renderer.toneMapping = THREE.ReinhardToneMapping;
 
     scene = new THREE.Scene();

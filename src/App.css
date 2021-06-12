@@ -80,7 +80,7 @@ canvas {
     sans-serif; 
     font-weight: bolder;
     border-right: 2px solid rgba(255, 255, 255, .75);
-    font-size: 6em;
+    font-size: 5vw;
     color: #000000;
     white-space: nowrap;
     overflow: hidden;

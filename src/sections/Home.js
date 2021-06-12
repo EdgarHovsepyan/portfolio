@@ -1,4 +1,4 @@
-import { ACESFilmicToneMapping } from "three";
+import { ACESFilmicToneMapping, Color } from "three";
 import { Canvas } from "react-three-fiber";
 import Boxes from "../components/Boxes";
 import LightPoint from "../components/LightPoint";
@@ -10,7 +10,7 @@ const Home = () => {
       <Canvas
         pixelRatio={window.devicePixelRatio}
         onCreated={({ gl }) => {
-          gl.setClearColor("#610000");
+          gl.setClearColor(new Color("#610000"));
           gl.toneMapping = ACESFilmicToneMapping;
           gl.toneMappingExposure = 1.5;
         }}

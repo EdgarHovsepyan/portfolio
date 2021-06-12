@@ -50,9 +50,10 @@ const Boxes = () => {
   return (
     <instancedMesh
       ref={ref}
-      args={[null, null, 1000]}
+      args={[null, null, 200]}
       onPointerMove={(e) => setHovered(e.instanceId)}
       onPointerOut={() => setHovered(undefined)}
+      position={[1, 0, 0]}
     >
       <boxBufferGeometry attach="geometry" args={[0.7, 0.7, 0.7]}>
         <instancedBufferAttribute

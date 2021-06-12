@@ -51,25 +51,25 @@ function Swarm({ count }) {
       let { t, factor, speed, xFactor, yFactor, zFactor } = particle;
       // There is no sense or reason to any of this, just messing around with trigonometric functions
       t = particle.t += speed / 2;
-      const a = Math.cos(t) + Math.sin(t * 1) / 10;
-      const b = Math.sin(t) + Math.cos(t * 2) / 10;
+      const a = Math.cos(t) + Math.sin(t * 1) / 20;
+      const b = Math.sin(t) + Math.cos(t * 2) / 20;
       const s = Math.cos(t);
       particle.mx += mouse.x * viewport.width * particle.mx * 0.01;
       particle.my += mouse.y * viewport.height * particle.my * 0.01;
       // Update the dummy object
       dummy.position.set(
         (particle.mx / 10) * a +
-          xFactor +
-          Math.cos((t / 10) * factor) +
-          (Math.sin(t * 1) * factor) / 10,
+        xFactor +
+        Math.cos((t / 10) * factor) +
+        (Math.sin(t * 1) * factor) / 10,
         (particle.my / 10) * b +
-          yFactor +
-          Math.sin((t / 10) * factor) +
-          (Math.cos(t * 2) * factor) / 10,
+        yFactor +
+        Math.sin((t / 10) * factor) +
+        (Math.cos(t * 2) * factor) / 10,
         (particle.my / 10) * b +
-          zFactor +
-          Math.cos((t / 10) * factor) +
-          (Math.sin(t * 3) * factor) / 10
+        zFactor +
+        Math.cos((t / 10) * factor) +
+        (Math.sin(t * 3) * factor) / 10
       );
       dummy.scale.set(s, s, s);
       dummy.rotation.set(s * 5, s * 5, s * 5);
@@ -81,7 +81,7 @@ function Swarm({ count }) {
   });
   return (
     <>
-      <pointLight ref={light} distance={60} intensity={0.8} color="skyblue" />
+      <pointLight ref={light} distance={50} intensity={0.8} color="skyblue" />
       <instancedMesh ref={mesh} args={[null, null, count]}>
         <sphereBufferGeometry args={[0.2, 30, 30]} />
         <meshStandardMaterial color="#790000" />
@@ -104,7 +104,7 @@ const Particles = () => {
       <Canvas camera={{ fov: 75, position: [0, 0, 70] }}>
         <pointLight intensity={0.7} color="white" />
         <pointLight intensity={0.5} position={[70, 70, 70]} color="lightblue" />
-        <Swarm count={20000} />
+        <Swarm count={5000} />
         <Effects>
           <waterPass attachArray="passes" factor={2} />
           <unrealBloomPass attachArray="passes" args={[undefined, 1.5, 1, 0]} />
